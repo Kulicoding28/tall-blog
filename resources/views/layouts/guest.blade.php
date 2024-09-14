@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,11 +18,19 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+
+    <body class="font-sans bg-gray-900">
+        <x-banner />
+
+        @include('layouts.partials.navbar')
+        <main class="container mx-auto flex flex-grow">
             {{ $slot }}
-        </div>
+        </main>
+        @include('layouts.partials.footer')
+
+        @stack('modals')
 
         @livewireScripts
     </body>
+
 </html>
