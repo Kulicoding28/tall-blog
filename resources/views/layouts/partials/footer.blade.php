@@ -1,12 +1,12 @@
- <section class="text-white bg-gray-900 body-font" {!! $attributes ?? '' !!}>
+ <section class="text-red bg-gray-900 body-font" {!! $attributes ?? '' !!}>
      <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
-         <a href="#_" class="text-xl font-black leading-none text-white select-none logo">tall.Blog<span
-                 class="text-gray-600">.</span></a>
-         <p class="mt-4 text-sm text-white sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">&copy; 2021
+         <a href="#_" class="text-xl font-black leading-none text-red-700 select-none logo">tall.Blog<span
+                 class="text-red-700">.</span></a>
+         <p class="mt-4 text-sm text-red-700 sm:ml-4 sm:pl-4 sm:border-l sm:border-white sm:mt-0">&copy; 2021
              tall.Blog - Tall Stack Blogs
          </p>
          <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
-             <a href="#" class="text-gray-400 hover:text-gray-500">
+             <a href="#" class="text-red-700 hover:text-red-500">
                  <span class="sr-only">Facebook</span>
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                      <path fill-rule="evenodd"
@@ -15,7 +15,7 @@
                  </svg>
              </a>
 
-             <a href="#" class="text-gray-400 hover:text-gray-500">
+             <a href="#" class="text-red-700 hover:text-red-500">
                  <span class="sr-only">Instagram</span>
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                      <path fill-rule="evenodd"
@@ -24,7 +24,7 @@
                  </svg>
              </a>
 
-             <a href="#" class="text-gray-400 hover:text-gray-500">
+             <a href="#" class="text-red-700 hover:text-red-500">
                  <span class="sr-only">Twitter</span>
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                      <path
@@ -32,7 +32,7 @@
                  </svg>
              </a>
 
-             <a href="#" class="text-gray-400 hover:text-gray-500">
+             <a href="#" class="text-red-700 hover:text-red-500">
                  <span class="sr-only">GitHub</span>
                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                      <path fill-rule="evenodd"
@@ -41,7 +41,7 @@
                  </svg>
              </a>
 
-             <a href="#" class="text-gray-400 hover:text-gray-500">
+             <a href="#" class="text-red-700 hover:text-red-500">
                  <span class="sr-only">Dribbble</span>
                  <svg class="w-6 h-6 " fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                      <path fill-rule="evenodd"
