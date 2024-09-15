@@ -22,7 +22,9 @@
     <body class="font-sans bg-gray-900">
         <x-banner />
 
+
         @include('layouts.partials.navbar')
+        @yield('hero')
         <main class="container mx-auto flex flex-grow">
             {{ $slot }}
         </main>
