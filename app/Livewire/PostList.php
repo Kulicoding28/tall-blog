@@ -10,10 +10,16 @@ use Livewire\WithPagination;
 class PostList extends Component
 {
     use WithPagination;
+    public $sort = 'desc';
+
+    public function setSort($sort)
+    {
+        $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
+    }
     #[Computed()]
     public function posts()
     {
-        return Post::published()->orderBy('published_at', 'desc')->paginate(5);
+        return Post::published()->orderBy('published_at', $this->sort)->paginate(5);
     }
 
     public function render()

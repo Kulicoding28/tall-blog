@@ -1,8 +1,10 @@
  <div class=" px-3 lg:px-7 py-6">
-     <div class="flex justify-between items-center border-b border-gray-100">
+     <div class="flex justify-between items-center border-b border-gray-100 p-2">
          <div class="flex items-center space-x-4 font-light ">
-             <button class="text-red-500 py-4">Latest</button>
-             <button class="text-red-700 py-4 border-b border-gray-600">Oldest</button>
+             <button class="{{ $sort == 'desc' ? 'text-red-700 border-b border-white' : 'text-red-500' }} py-4"
+                 wire:click="setSort('desc')">Latest</button>
+             <button class="{{ $sort == 'asc' ? 'text-red-700 border-b border-white' : 'text-red-500' }} py-4"
+                 wire:click="setSort('asc')">Oldest</button>
          </div>
      </div>
      <div class="py-4">
