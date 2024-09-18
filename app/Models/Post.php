@@ -39,6 +39,7 @@ class Post extends Model
 
     public function getReadingTime()
     {
-        return round(str_word_count($this->body) / 250);
+        $mins = round(str_word_count($this->body) / 250);
+        return ($mins < 1) ? 1 : $mins;
     }
 }
