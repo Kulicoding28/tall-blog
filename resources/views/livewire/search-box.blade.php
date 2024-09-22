@@ -12,5 +12,15 @@
                 class="w-40 ml-1 bg-transparent focus:outline-none focus:border-none focus:ring-0 outline-none border-none text-xs text-gray-800 placeholder:text-gray-400"
                 type="text" placeholder="Search blog">
         </div>
+        {{-- <x-button wire:click="updateSearch" wire:loading.attr="disabled"
+            class="bg-red-700 text-white hover:bg-red-900">Search</x-button> --}}
+        @if ($isSearchable)
+            <x-button wire:click="updateSearch" wire:loading.attr="disabled"
+                class="bg-red-700 text-white hover:bg-red-900">
+                <span wire:loading.remove>search</span>
+                <span wire:loading>searching...</span>
+            </x-button>
+        @endif
+
     </div>
 </div>

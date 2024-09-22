@@ -13,8 +13,10 @@ class PostList extends Component
 {
     use WithPagination;
 
-    // #[Url()]
+    #[Url()]
     public $sort = 'desc';
+
+    #[Url()]
     public $search = '';
 
     public function setSort($sort)
