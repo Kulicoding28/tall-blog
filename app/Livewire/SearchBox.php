@@ -17,15 +17,11 @@ class SearchBox extends Component
     {
 
         $this->dispatch('search', search: $this->search);
+
         if ($this->isSearchable) {
-            // Simulasi pencarian
-            $this->isSearchable = false; // Disable tombol selama pencarian
-
-            // Simulasi delay untuk pencarian (contoh)
+            $this->isSearchable = false;
             sleep(2);
-
-            // Setelah pencarian selesai
-            $this->isSearchable = true; // Aktifkan kembali tombol
+            $this->isSearchable = true;
         }
     }
     /**
