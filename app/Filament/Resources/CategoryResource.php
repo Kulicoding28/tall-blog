@@ -23,10 +23,17 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required()->minLength(1)->maxLength(150),
-                TextInput::make('slug')->required()->unique(ignoreRecord: true)->minLength(1)->maxLength(
-                    150
-                ),
+                TextInput::make('title')
+                    ->required()
+                    ->minLength(1)
+                    ->maxLength(150),
+                TextInput::make('slug')
+                    ->required()
+                    ->unique(ignoreRecord: true)
+                    ->minLength(1)
+                    ->maxLength(
+                        150
+                    ),
                 TextInput::make('text_color')->nullable(),
                 TextInput::make('bg_color')->nullable(),
             ]);

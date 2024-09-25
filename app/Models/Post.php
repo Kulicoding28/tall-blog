@@ -13,6 +13,16 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $fillable = [
+        'user_id',
+        'image',
+        'title',
+        'slug',
+        'body',
+        'published_at',
+        'featured',
+    ];
+
     protected function casts(): array
     {
         return [

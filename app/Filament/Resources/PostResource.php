@@ -10,11 +10,14 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
@@ -60,6 +63,14 @@ class PostResource extends Resource
                     DateTimePicker::make('published_at')
                         ->nullable(),
                     Checkbox::make('featured'),
+                    Select::make('author')
+                        ->relationship('author', 'name')
+                        ->searchable()
+                        ->required(),
+                    Select::make('categories')
+                        ->relationship('categories', 'title')
+                        ->searchable()
+                        ->required(),
 
                 ])
             ]);
@@ -69,7 +80,15 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                //
+                ImageColumn::make('image'),
+                TextColumn::make('title')->sortable()->searchable(),
+                TextColumn::make('slug')->sortable()->searchable(),
+                TextColumn::make('author.name')->sortable()->searchable(),
+                TextColumn::make('published_at')
+                    ->date('Y-m-d')
+                    ->sortable()
+                    ->searchable(),
+
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
