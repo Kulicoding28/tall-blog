@@ -56,7 +56,7 @@ class PostResource extends Resource
                             ->fileAttachmentsDirectory('posts/images')->columnSpanFull(),
                     ]
                 )->columns(2),
-                Section::make('Meta')->schema([
+                Section::make('meta')->schema([
                     FileUpload::make('image')
                         ->image()
                         ->directory('posts/thumbnail'),
@@ -68,10 +68,9 @@ class PostResource extends Resource
                         ->searchable()
                         ->required(),
                     Select::make('categories')
+                        ->multiple()
                         ->relationship('categories', 'title')
-                        ->searchable()
-                        ->required(),
-
+                        ->searchable(),
                 ])
             ]);
     }
