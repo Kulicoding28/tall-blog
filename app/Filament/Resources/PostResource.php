@@ -40,8 +40,8 @@ class PostResource extends Resource
                             ->required()
                             ->minLength(1)
                             ->maxLength(150)
-                            ->afterStateUpdated(function (string $opration, $state, Set $set) {
-                                if ($opration === 'edit') {
+                            ->afterStateUpdated(function (string $operation, $state, Set $set) {
+                                if ($operation === 'edit') {
                                     return;
                                 }
                                 $set('slug', Str::slug($state));

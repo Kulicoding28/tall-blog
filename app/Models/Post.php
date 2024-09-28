@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -49,6 +50,13 @@ class Post extends Model
         $query->where('featured', true);
     }
 
+    public function scopeWithCategory($query, string $category)
+    {
+        $query->whereHas('categories', function ($query) use ($category) {
+            $query->where('slug', $category);
+        });
+    }
+
     public function getExcerpt()
     {
         return Str::limit(strip_tags($this->body), 150);
@@ -58,5 +66,14 @@ class Post extends Model
     {
         $mins = round(str_word_count($this->body) / 250);
         return ($mins < 1) ? 1 : $mins;
+    }
+
+    public function getThumbnail()
+    {
+        $isUrl = str_contains($this->image, 'http');
+        if ($isUrl) {
+            return $this->image;
+        }
+        return ($isUrl) ? $this->image : Storage::disk('public')->url($this->image);
     }
 }
