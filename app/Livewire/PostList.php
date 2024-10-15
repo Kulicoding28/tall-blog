@@ -14,18 +14,18 @@ class PostList extends Component
 {
     use WithPagination;
 
-    #[Url()]
+    #[Url]
     public $sort = 'desc';
 
-    #[Url()]
+    #[Url]
     public $search = '';
 
-    #[Url()]
+    #[Url]
     public $category = '';
 
     public function setSort($sort)
     {
-        $this->sort = ($sort === 'desc') ? 'desc' : 'asc';
+        $this->sort = $sort === 'desc' ? 'desc' : 'asc';
     }
 
     #[On('search')]
@@ -35,7 +35,7 @@ class PostList extends Component
         $this->resetPage();
     }
 
-    #[Computed()]
+    #[Computed]
     public function posts()
     {
         return Post::published()
