@@ -1,8 +1,7 @@
 <x-app-layout>
     @section('hero')
         <!-- Main Hero Content -->
-        <div
-            class="container max-w-sm py-32 mx-auto mt-px text-left sm:max-w-md md:max-w-lg sm:px-4 md:max-w-none md:text-center">
+        <div class="container max-w-sm py-32 mx-auto mt-px text-left sm:max-w-md md:max-w-lg sm:px-4  md:text-center">
             <h1
                 class="text-3xl font-bold leading-10 tracking-tight text-left text-red-700 md:text-center sm:text-4xl md:text-7xl lg:text-8xl">
                 Welcome to <br class="hidden sm:block"> Tall.Blogs</h1>
@@ -26,9 +25,7 @@
                 <div class="w-full">
                     <div class="grid grid-cols-3 gap-10 w-full">
                         @foreach ($featuredPosts as $post)
-                            <div class="md:col-span-1 col-span-3">
-                                <x-posts.post-card :post="$post" />
-                            </div>
+                            <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3" />
                         @endforeach
                     </div>
                     <a class="mt-10 block text-center text-lg text-white font-semibold mb-5"
@@ -41,9 +38,7 @@
                 <div class="w-full mb-5">
                     <div class="grid grid-cols-3 gap-10 w-full">
                         @foreach ($latestPosts as $post)
-                            <div class="md:col-span-1 col-span-3">
-                                <x-posts.post-card :post="$post" />
-                            </div>
+                            <x-posts.post-card :post="$post" class="md:col-span-1 col-span-3" />
                         @endforeach
                     </div>
                 </div>
